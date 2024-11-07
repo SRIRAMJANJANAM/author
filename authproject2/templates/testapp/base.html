@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: black;
+        }
+        #main{
+            color: red;
+            background: rgb(65, 62, 64);
+            text-align: center;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        nav{
+            display: block;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 6px;
+            background: rgb(65, 62, 64);
+            border-radius: 10px;
+        }
+       a{
+        text-decoration: none; 
+        color: rgb(14, 235, 146);
+       }
+        button{
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 2%;
+            color: rgb(14, 235, 146);
+            background: none;
+            border-radius: 20px;
+            border: none;
+            font-size: 25px;
+        }
+        form{
+            display: inline-block;
+        }
+        h1{
+            font-size: 50px;
+            color: aqua;
+            font-family: cursive;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Welcome to Sriram Exams</h1>
+        <nav>
+            <button><a href="/">Home</a></button>
+           <button><a href="/java">Java Exams</a></button>
+           <button><a href="/python">Python Exams</a></button>
+           <button><a href="/signup">Signup</a></button>
+           <button><a href="/accounts/login">Login</a></button>
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+        </nav>
+    </div>
+    {% block body_block %}
+    {% endblock %}
+</body>
+</html>

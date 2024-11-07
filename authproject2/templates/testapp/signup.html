@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% block body_block %}
+<head>
+    <style>
+        label{
+            color: red;
+            font-size: 25px;
+        }
+        body{
+          background-color: aliceblue;
+        }
+    </style>
+</head>
+<div class="jumbotron">
+  <div class="container">
+    <h1>Please SignUp To Write Exams.......</h1>
+    <form method="post">
+      {{form.as_p}}
+      {% csrf_token %}
+      <input type="submit" name="" value="SignUp">
+    </form>
+  </div>
+</div>
+{% endblock %}
